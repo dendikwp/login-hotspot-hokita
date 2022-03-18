@@ -1,0 +1,322 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>PT HOKITA</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="apple-touch-icon" href="assets\img\logo.png">
+  <link rel="icon" href="assets\img\logo.png">
+  <link rel='stylesheet' href='assets\css\bootstrap.min.css'>
+  <link rel='stylesheet' href='assets\css\vendor.css'>
+  <link rel='stylesheet' href='assets\css\style.css'>
+  <link rel='stylesheet' href='assets\css\demo.css'>
+  <link rel='stylesheet' href='assets\css\custom.css'>
+  <!--[if lte IE 9]><!-->
+  <script src='assets\js\vendor\html5shiv.min.js'></script>
+  <!--<![endif]-->
+</head>
+<body>
+
+  $(if chap-id)
+  <form name="sendin" action="$(link-login-only)" method="post">
+    <input type="hidden" name="username" />
+    <input type="hidden" name="password" />
+    <input type="hidden" name="dst" value="$(link-orig)" />
+    <input type="hidden" name="popup" value="true" />
+  </form>
+  <script type="text/javascript" src="/md5.js"></script>
+  <script type="text/javascript">
+  <!--
+      function doLogin() {
+    document.sendin.username.value = document.login.username.value;
+    document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+    document.sendin.submit();
+    return false;
+      }
+  //-->
+  </script>
+  $(endif)
+
+  <div class="site">
+    <div class="site-loader">
+      <div class="site-loader-spinner"></div>
+    </div> <!-- .site-loader -->
+
+    <div class="site-canvas">
+      <header class="site-header">
+        <nav class="navbar navbar-theme">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <div class="navbar-brand-wrap">
+                <a class="navbar-brand" href="#">
+                  <img src="assets\img\header.png" alt="">
+                </a>
+              </div>
+            </div> <!-- .navbar-header -->
+
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#home">Home</a></li>
+                <li><a href="#brief_3">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <!-- <li class="audio-toggle"><a href="#"><i class="fa fa-volume-up"></i></a></li> -->
+              </ul>
+            </div> <!-- .navbar-collapse -->
+          </div>
+        </nav>
+      </header> <!-- .site-header -->
+      <main class="site-main">
+        <div id="home" class="section block-primary position-r align-c-xs-max">
+          <div id="particles-js" class="site-bg">
+            <div class="site-bg-img"></div>
+            <div class="site-bg-video"></div>
+            <div class="site-bg-overlay"></div>
+            <div class="site-bg-effect layer" data-depth=".30"></div>
+            <canvas class="site-bg-canvas layer" data-depth=".30"></canvas>
+          </div> <!-- .site-bg -->
+
+          <div class="container">
+            <div class="row row-table">
+              <div class="col-sm-6">
+                <div class="col-inner" data-sr="left">
+                  <div class="section-heading">
+                    <h1>PT Hokita Presisi Indonesia</h1>
+                    <p>Selamat datang di layanan Hotspot</p></br>
+                  </div> <!-- .section-heading -->
+
+                  <div class="card-block py-lg px-md">
+                    <form id="loginForm" class="md-form form-light" role="form" action="$(link-login-only)" method="post">
+                        <input type="hidden" name="dst" value="$(link-orig)"/>
+                        <input type="hidden" name="popup" value="true"/>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <div class="md-form-line-wrap">
+                              <input id="inputUser" type="text" name="username" placeholder="Username" class="form-control" autofocus required onclick="this.value = '' "/>
+                              <br>
+                              <input id="inputPassword" type="text" name="password" placeholder="Password" class="form-control" required onclick="this.value = '' "/> 
+                              <br>
+                              <button type="submit" class="btn btn-block btn-warning" onclick="getAndSetVal();"><span class="btn-elem-wrap"> <span class="icon fa fa-send"></span> <span class="text">LOGIN</span></span></button><span style="display: none;" class="form-notify help-block mb-0"></span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="inputPassword" class="form-label"></label>
+                            <div class="md-form-line-wrap">
+                              <input id="inputPassword" type="text" name="password" placeholder="Password" class="form-control" required onclick="this.value = '' "/> 
+                            </div>
+                          </div>
+                        </div> -->
+                        <!-- <div class="col-md-6">
+                          <div class="form-group mb-0">
+                            <button type="submit" class="btn btn-block btn-warning" onclick="getAndSetVal();"><span class="btn-elem-wrap"> <span class="icon fa fa-send"></span> <span class="text">LOGIN</span></span></button><span style="display: none;" class="form-notify help-block mb-0"></span>
+                          </div> 
+                        </div> -->
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            $(if error)
+                              <p><font style="color: #ffffffe8">Terjadi kesalahan: </font>$(error)</p>
+                            $(endif)
+                          </div>
+                        </div>
+                        <di class="col-md-12">
+                          <div class="form-group mb-0">
+                              <div style="color: #ffffff9c; font-size: 10px" align=center>Powered by PT.HOKITA</div> 
+                          </div>
+                        </di>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-p-l-1 m-t-60-xs-max">
+                <div class="col-inner clearfix">
+                  <img class="img-responsive float-r-sm-min m-x-auto-xs-max" src="assets\img\item\brief-1.png" alt="" data-sr="right">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- #home -->
+
+          <div id="brief_3" class="section block-success align-c-xs-max">
+            <div class="container">
+              <div class="row row-table">
+                <div class="col-sm-6">
+                  <div class="col-inner">
+                    <div class="section-heading">
+                      <h2>PT Hokita Presisi Indonesia</h2>
+                    </div> <!-- .section-heading -->
+                    <div class="section-content">
+                      <!-- <ul class="icon-list align-l m-t-30">
+                        <li><img src="assets/img/icon/computer.png"> Maintenance Komputer</li>
+                        <li><img src="assets/img/icon/modem.png" alt=""> Setup Jaringan</li>
+                        <li><img src="assets/img/icon/server-1.png" alt=""> Setup Server</li>
+                      </ul> -->
+                      <p align="justify">
+                        PT Hokita Presisi Indonesia merupakan salah satu perusahaan kemasan yang bergerak di bidang botol - botol plastik ( Blow Molding, Injection Molding & Strech - Blow Molding ). 
+                        PT Hokita Dapat membuat botol - botol untuk saos - sambal, kecap, minuman, kosmetik, olie dan obat - obatan dengan ukuran 30 ML - 5L, menggunakan bahan PVC, PE, PP dan PET serta dengan disain botol atau produk yang sesuai dengan keinginan customer. 
+                        Harga bersaing, kualitas yang terbaik serta pengiriman tepat waktu merupakan komitmen yang kami berikan kepada setiap customer kami.
+                      </p>
+                      <!-- <a class="btn btn-primary m-y-5" href="#pricing">Our Plan</a> -->
+                    </div> <!-- .section-content -->
+                  </div>
+                </div>
+                <div class="col-sm-6 m-t-60-xs-max p-l-60-md-min">
+                  <div class="col-inner clearfix">
+                    <img class="img-responsive float-r-sm-min m-x-auto-xs-max" src="assets\img\item\brief-3.png" alt="" data-sr="right">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- #brief_3 -->
+  
+          <div id="contact" class="section block-danger">
+            <div class="container">
+              <div class="section-heading text-center">
+                <h2>Info Kontak</h2>
+              </div>
+              <div class="row section-content m-t-60-sm-min">
+                <div class="col-sm-6 col-md-5">
+                  <div class="col-inner">
+                    <div class="icon-box _left">
+                      <div class="icon-box-media">
+                        <img src="assets\img\icon\mobile.png" alt="" data-sr="bottom">
+                      </div>
+                      <div class="icon-box-heading">
+                        <h4>No Telpon</h4>
+                      </div>
+                      <div class="icon-box-content font-sub font-italic">
+                        <span>021-5917585</span>
+                      </div>
+                    </div>
+  
+                    <div class="icon-box _left">
+                      <div class="icon-box-media">
+                        <img src="assets\img\icon\mail.png" alt="" data-sr="bottom">
+                      </div>
+                      <div class="icon-box-heading">
+                        <h4>Email</h4>
+                      </div>
+                      <div class="icon-box-content font-sub font-italic">
+                        <span>support@indonetwork.co.id</span>
+                        <br>
+                      </div>
+                    </div>
+  
+                    <div class="icon-box _left">
+                      <div class="icon-box-media">
+                        <img src="assets\img\icon\pin.png" alt="" data-sr="bottom">
+                      </div>
+                      <div class="icon-box-heading">
+                        <h4>Alamat Perusahaan</h4>
+                      </div>
+                      <div class="icon-box-content font-sub font-italic">
+                        <span>Jl. Palem Manis Raya No.11 Tangerang, Tangerang, Banten Tangerang, Provinsi Banten</span>
+                        <br>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-p-l-1 m-t-60-xs-max">
+                  <div class="col-inner clearfix">
+                    <img class="img-responsive float-r-sm-min m-x-auto-xs-max" src="assets\img\item\home.png" alt="" data-sr="right">
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-offset-1 m-t-60-xs-max">
+                  <div class="col-inner">
+                    <form class="_default" id="contactForm" novalidate="novalidate">
+                      <!-- <div class="form-group required">
+                        <label class="form-label" for="contactName" style="color: #121212">Your name</label>
+                        <input class="form-control" id="contactName" type="text" name="name">
+                      </div>
+                      <div class="form-group required">
+                        <label class="form-label" for="contactEmail" style="color: #121212">Email address</label>
+                        <input class="form-control" id="contactEmail" type="text" name="email">
+                      </div>
+                      <div class="form-group required">
+                        <label class="form-label" for="contactMessage" style="color: #121212">Message</label>
+                        <textarea class="form-control" id="contactMessage" rows="4" name="message"></textarea>
+                      </div>
+                      <div class="btn-wrap">
+                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                      </div>
+                      <div class="form-notify"></div> -->
+                    </form> <!-- #contactForm -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- #contact -->
+        <!-- <div id="map-canvas"></div> #map-canvas -->
+      </main> <!-- .site-main -->
+      <footer class="site-footer block-invert">
+        <div class="container">
+          <img class="site-footer-logo img-responsive" src="assets\img\logo.png" data-sr="bottom">
+          <ul class="site-footer-social-list">
+            <!-- <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+            <li><a href="https://twitter.com/" target="_blank">Twitter</a></li>
+            <li><a href="https://instagram.com/" target="_blank">Instagram</a></li> -->
+          </ul>
+          <p class="site-footer-copyright">2021 © <a href="#home" target="_blank">PT Hokita Pressisi Indonesia</a> | all rights reserved.</p>
+          <p class="site-footer-copyright"> <a href="https://www.facebook.com/dendikwp/" target="_blank">by DW24-design</p>
+
+        </div>
+      </footer> <!-- .site-footer -->
+    </div>
+  </div>
+
+  <script src="assets\js\vendor\jquery-1.11.3.min.js"></script>
+  <script src='assets\js\vendor\bootstrap.min.js'></script>
+  <script src='assets\js\vendor\plugin.js'></script>
+  <script src='assets\js\variable.js'></script>
+  <script src='assets\js\map.js'></script>
+  <script src='assets\js\main.js'></script>
+  <script src='assets\js\demo.js'></script>
+  <!-- <audio id="audioPlayer" loop=""><source src="assets/audio/audio.mp3" type="audio/mpeg"></audio> -->
+  <script>
+    function getAndSetVal()
+    {
+        var txt1 = document.getElementById('inputUser').value;
+        document.getElementById('inputPassword').value = txt1;
+    }
+    // get value
+    function getVal()
+    {
+      var inputUser = document.getElementById('inputUser').value;
+      alert(inputUser);
+    }
+  </script>
+
+  $(if chap-id)
+  <script type="text/javascript" src="md5.js"></script>
+  <script type="text/javascript">
+      $('#loginForm').submit(function () {
+          var password = $('#inputPassword');
+          password.val(hexMD5('$(chap-id)' + password.val() + '$(chap-challenge)'));
+      });
+  </script>
+  $(endif)
+  <script>
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+  <script type="text/javascript">
+  <!--
+    document.login.username.focus();
+  //-->
+  </script>
+</body>
+</html>
